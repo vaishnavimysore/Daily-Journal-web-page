@@ -1,0 +1,12 @@
+<%- include('partials/header') -%>
+<h1>Home</h1>
+<p><%= paratype %></p>
+
+<%  post.forEach(function (element) { %>
+    <h1 > <%= element.pTitle %>  </h1>
+    <p><%= element.pData.substring(0,100) + "..." %>
+      <a href="/posts/<%= _.kebabCase(element.pTitle) %>">Read More</a>
+    </p>
+  <% }); %>
+
+<%- include('partials/footer') -%>
